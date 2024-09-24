@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+
+    <!-- Import Lexend Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply Lexend font */
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        /* Custom class for backdrop filter */
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav
+        class="bg-gray-300 pb-[1rem] bg-opacity-20 backdrop-blur-custom fixed top-0 w-full z-50 rounded-lg border border-gray-200 border-opacity-20">
+        <div class="p-[1.5rem] bg-[#e8e0d2]">
+            <div class="container mx-auto flex flex-col sm:flex-row flex-wrap justify-between items-center max-w-screen-xl">
+                <!-- Menu Button -->
+                <div class="flex items-center space-x-2">
+                    <a href="faq.html">
+                        <button class="bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded-lg">
+                            Blog
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Text with Icon -->
+                <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                    <img src="./assets/logo.png" alt="Icon" class="w-[3rem]" />
+                    <span class="text-[#111111] text-lg font-semibold">Text Here</span>
+                </div>
+
+                <!-- Currency Section -->
+                <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                    <img src="./assets/coin.png" alt="Currency Icon" class="w-[1.75rem]" />
+                    <span id="currency-value" class="text-[#111111] text-lg">5500 USD</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="container mx-auto flex justify-center space-x-8 mt-[3.5625rem]">
+            <a href="#" id="donationButton"
+                class="text-[#111111] w-[9.8125rem] h-[3.5625rem] text-center font-semibold flex items-center justify-center text-xl bg-emerald-500 hover:bg-emerald-400 border border-gray-400 rounded-[0.46rem]">
+                Donation
+            </a>
+            <a href="#" id="historyButton"
+                class="text-[#111111] w-[9.8125rem] h-[3.5625rem] text-center flex items-center justify-center text-xl hover:bg-emerald-400 border border-gray-400 rounded-[0.46rem]">
+                History
+            </a>
+        </div>
+    </nav>
+
+    <!-- Body Content -->
+    <main id="mainContent" class="mt-[9rem] h-[200rem] sm:h-[48rem] md:h-[130rem] lg:h-[117rem]">
+    <section id="donationSection" class="container mx-auto flex flex-col space-y-8 max-w-screen-xl relative top-[28vh] p-4">
+        <!-- Donation Cards 1 -->
+        <div class="donation-card bg-white shadow-lg rounded-lg p-4 md:p-[2rem] flex flex-col md:flex-row">
+            <div class="left w-full md:w-1/3">
+                <img src="./assets/noakhali.png" alt="Image"
+                    class="w-full h-[18rem] md:w-[32.625rem] md:h-[24.3125rem] object-cover rounded-lg" />
+            </div>
+            <div class="right w-full md:w-2/3 pl-0 md:pl-4 mt-4 md:mt-0">
+                <div class="flex items-center space-x-2 w-fit px-2 py-1 rounded-lg bg-[#e2e2e2]">
+                    <img src="./assets/coin.png" alt="Icon" class="h-6 w-6" />
+                    <span class="text-lg font-semibold donation-total-1">0 USD</span>
+                </div>
+                <h3 class="text-xl font-bold mt-2">Donate for Flood at Noakhali, Bangladesh</h3>
+                <div class="mt-2 text-gray-700">
+                    <p>
+                        The recent floods in Noakhali have caused significant damage to homes infrastructure. Your donation
+                        will help provide
+                        essential supplies and to those affected by this disaster. Every contribution, big or small, makes
+                        difference. Please
+                        join us in supporting the relief efforts and making a positive impact on the lives of those in need.
+                    </p>
+                </div>
+                <div class="mt-8 md:mt-[5rem]">
+                    <input type="text" id="donation1" placeholder="Write Donation Amount"
+                        class="border rounded-lg p-2 w-full" />
+                </div>
+                <div class="mt-4 md:mt-[3.6rem]">
+                    <button onclick="donate(1)"
+                        class="text-[#111111] font-bold py-2 px-4 w-full rounded-lg bg-[#B4F461] hover:bg-[#77ff37]">Donate
+                        Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card Section 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-4 md:p-[2rem] flex flex-col md:flex-row">
+            <div class="left w-full md:w-1/3">
+                <img src="./assets/feni.png" alt="Image"
+                    class="w-full h-[18rem] md:w-[32.625rem] md:h-[24.3125rem] object-cover rounded-lg" />
+            </div>
+            <div class="right w-full md:w-2/3 pl-0 md:pl-4 mt-4 md:mt-0">
+                <div class="flex items-center space-x-2 w-fit px-2 py-1 rounded-lg bg-[#e2e2e2]">
+                    <img src="./assets/coin.png" alt="Icon" class="h-6 w-6" />
+                    <span class="text-lg font-semibold donation-total-2">0 USD</span> <!-- Donation total -->
+                </div>
+    
+                <h3 class="text-xl font-bold mt-2">Donate for Flood Relief in Feni,Bangladesh</h3>
+    
+                <div class="mt-2 text-gray-700">
+                    <p>
+                        The recent floods in Feni have devastated local communities, leading to severe disruption and loss.
+                        Your generous
+                        donation will help provide immediate aid, including food, clean water, and medical supplies, to
+                        those affected by this
+                        calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this
+                        disaster. Every
+                        contribution counts towards making a real difference. Please consider donating today to assist those
+                        in urgent need.
+                    </p>
+                </div>
+    
+                <div class="mt-8 md:mt-[5rem]">
+                    <input type="text" id="donation2" placeholder="Write Donation Amount"
+                        class="border rounded-lg p-2 w-full" />
+                </div>
+    
+                <div class="mt-4 md:mt-[3.6rem]">
+                    <button onclick="donate(2)"
+                        class="text-[#111111] font-bold py-2 px-4 w-full rounded-lg bg-[#B4F461] hover:bg-[#77ff37]">
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Card Section 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-4 md:p-[2rem] flex flex-col md:flex-row">
+            <div class="left w-full md:w-1/3">
+                <img src="./assets/quota-protest.png" alt="Image"
+                    class="w-full h-[18rem] md:w-[32.625rem] md:h-[24.3125rem] object-cover rounded-lg" />
+            </div>
+            <div class="right w-full md:w-2/3 pl-0 md:pl-4 mt-4 md:mt-0">
+                <div class="flex items-center space-x-2 w-fit px-2 py-1 rounded-lg bg-[#e2e2e2]">
+                    <img src="./assets/coin.png" alt="Icon" class="h-6 w-6" />
+                    <span class="text-lg font-semibold donation-total-3">0 USD</span> <!-- Donation total -->
+                </div>
+    
+                <h3 class="text-xl font-bold mt-2">Aid for Injured in the Quota Movement</h3>
+    
+                <div class="mt-2 text-gray-700">
+                    <p>
+                        The recent Quota movement has resulted in numerous injuries and significant hardship for many
+                        individuals. Your support
+                        is crucial in providing medical assistance, rehabilitation, and necessary supplies to those
+                        affected. By contributing,
+                        you help ensure that injured individuals receive the care and support they need during this
+                        challenging time. Every
+                        donation plays a vital role in alleviating their suffering and aiding in their recovery. Please
+                        consider making a
+                        donation to support these brave individuals in their time of need.
+                    </p>
+                </div>
+    
+                <div class="mt-8 md:mt-[5rem]">
+                    <input type="text" id="donation3" placeholder="Write Donation Amount"
+                        class="border rounded-lg p-2 w-full" />
+                </div>
+    
+                <div class="mt-4 md:mt-[3.6rem]">
+                    <button onclick="donate(3)"
+                        class="text-[#111111] font-bold py-2 px-4 w-full rounded-lg bg-[#B4F461] hover:bg-[#77ff37]">
+                        Donate Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="historySection"
+        class="container mx-auto flex flex-col space-y-8 max-w-screen-xl relative top-[28vh] p-4 hidden">
+        <h2 class="text-2xl font-bold">Donation History</h2>
+        <div id="historyCards" class="flex flex-col space-y-4"></div>
+    </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white p-8 rounded-xl max-w-xs sm:max-w-md text-center">
+            <h3 class="text-3xl font-semibold mb-4">Congrates!!</h3>
+            <img src="./assets/coin.png" alt="Success" class="w-10 mx-auto mb-4">
+            <p class="text-gray-600 mb-4">You Have Donated for Humankind</p>
+            <h3 class="text-xl font-semibold mb-2">Successfully</h3>
+            <button id="closeModal"
+                class="mt-4 text-white font-bold py-2 px-4 rounded-lg bg-[#e2e2e2] hover:bg-[#cfcccc]">close confirmation</button>
+        </div>
+    </div>
+
+
+    <script>
+        const initialAmount = 5500; // Initial currency value
+        let currentAmount = initialAmount; // Current available amount
+
+        // Load donation totals and history from localStorage or initialize them
+        const donationTotals = JSON.parse(localStorage.getItem('donationTotals')) || [0, 0, 0];
+        const donationHistory = JSON.parse(localStorage.getItem('donationHistory')) || [];
+
+        // Update the displayed donation totals
+        function updateDonationTotals() {
+            document.querySelector('.donation-total-1').innerText = `${donationTotals[0]} USD`;
+            document.querySelector('.donation-total-2').innerText = `${donationTotals[1]} USD`;
+            document.querySelector('.donation-total-3').innerText = `${donationTotals[2]} USD`;
+            // Add similar updates for other totals...
+        }
+
+        // Update the current amount displayed
+        function updateCurrentAmount() {
+            document.getElementById('currency-value').innerText = `${currentAmount} USD`;
+        }
+
+        // Function to handle donation
+        function donate(cardNumber) {
+            const donationInput = document.getElementById(`donation${cardNumber}`);
+            const donationAmount = parseFloat(donationInput.value);
+
+            if (donationAmount > 0 && donationAmount <= currentAmount) {
+                // Deduct the donation amount from current amount
+                currentAmount -= donationAmount;
+
+                // Update the donation total for the selected card
+                donationTotals[cardNumber - 1] += donationAmount;
+
+                // Record the donation in history
+                const donationTitle = `Donate for Flood at ${cardNumber === 1 ? 'Noakhali' : cardNumber === 2 ? 'Sylhet' : 'Chittagong'}, Bangladesh`;
+                const donationDate = new Date();
+                donationHistory.push({ amount: donationAmount, title: donationTitle, date: donationDate.toString() });
+
+                // Save updated totals and history to localStorage
+                localStorage.setItem('donationTotals', JSON.stringify(donationTotals));
+                localStorage.setItem('donationHistory', JSON.stringify(donationHistory));
+
+                // Show success modal
+                document.getElementById('modal').style.display = 'flex';
+
+                // Update displayed values
+                updateDonationTotals();
+                updateCurrentAmount();
+
+                // Clear the input field
+                donationInput.value = '';
+            } else {
+                alert('Invalid donation amount!');
+            }
+        }
+
+        // Function to close modal
+        document.getElementById('closeModal').onclick = function () {
+            document.getElementById('modal').style.display = 'none';
+        };
+
+        // Navigation handling
+        document.getElementById('donationButton').onclick = function () {
+            document.getElementById('historySection').classList.add('hidden');
+            document.getElementById('donationSection').classList.remove('hidden');
+
+            document.getElementById('donationButton').classList.add('bg-emerald-500', 'text-[#111111]', 'hover:bg-emerald-400', 'font-semibold');
+            document.getElementById('historyButton').classList.remove('bg-emerald-500', 'text-[#111111]', 'font-semibold');
+            document.getElementById('historyButton').classList.add('bg-emerald-500 hover:bg-emerald-400', 'text-[#111111]', 'font-semibold');
+            document.getElementById('donationButton').classList.remove('bg-emerald-500 hover:bg-emerald-400', 'text-[#111111]');
+        };
+
+        document.getElementById('historyButton').onclick = function () {
+            document.getElementById('donationSection').classList.add('hidden');
+            document.getElementById('historySection').classList.remove('hidden');
+
+            document.getElementById('donationButton').classList.remove('bg-emerald-500', 'text-[#111111]', 'font-semibold');
+            document.getElementById('historyButton').classList.add('bg-emerald-500', 'text-[#111111]', 'hover:bg-emerald-400', 'font-semibold');
+
+            // Clear existing history cards
+            const historyCards = document.getElementById('historyCards');
+            historyCards.innerHTML = '';
+
+            // Populate history cards
+            donationHistory.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white shadow-lg rounded-lg p-4';
+                card.innerHTML = `
+                    <p>${item.amount} Taka is Donated for ${item.title}</p>
+                    <p>Date: ${new Date(item.date).toString()}</p>
+                `;
+                historyCards.appendChild(card);
+            });
+        };
+
+        // Initial setup
+        updateDonationTotals();
+        updateCurrentAmount();
+    </script>
+
+    <footer>
+        <div class="bg-[#e8e0d2] p-8">
+            <div class="container mx-auto max-w-screen-xl">
+            </div>
+    </footer>
+
+</body>
+
+</html>

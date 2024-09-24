@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Import Lexend Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply Lexend font */
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        /* Custom class for backdrop filter */
+        .backdrop-blur-custom {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav
+        class="bg-gray-300 bg-opacity-20 backdrop-blur-custom fixed top-0 w-full z-50 border border-gray-200 border-opacity-20">
+        <div class="p-4 bg-[#e8e0d2]">
+            <div class="container mx-auto flex flex-col sm:flex-row flex-wrap justify-between items-center max-w-screen-xl">
+                <!-- Menu Button -->
+                <div class="flex items-center space-x-2">
+                    <a href="index.html">
+                        <button class="bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded-lg">
+                            Home
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Text with Icon -->
+                <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                    <img src="./assets/logo.png" alt="Icon" class="w-8 md:w-12" />
+                    <span class="text-[#111111] text-lg font-semibold">Text Here</span>
+                </div>
+
+                <!-- Currency Section -->
+                <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                    <img src="./assets/coin.png" alt="Currency Icon" class="w-6 md:w-8" />
+                    <span class="text-[#111111] text-lg">5500 BDT</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body Content -->
+    <main class="mt-20 md:mt-[12rem] flex-1 ">
+        <section class="container mt-[4rem] mx-auto flex flex-col space-y-8 max-w-screen-xl p-4">
+            <h1 class="text-2xl md:text-3xl font-semibold flex items-center">
+                Important FAQ
+                <i class="fas fa-question-circle ml-2"></i>
+            </h1>
+
+            <!-- Accordion -->
+            <div class="accordion">
+                <div class="border-b">
+                    <button
+                        class="flex justify-between items-center w-full p-4 text-left text-base md:text-lg font-semibold"
+                        onclick="toggleAccordion(this)">
+                        Question 1: What is the Document Object Model (DOM)?
+                        <i class="fas fa-chevron-down transition-transform duration-300 transform rotate-0"
+                            aria-hidden="true"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm md:text-base text-gray-700">
+                        DOM as a way for your browser to understand the HTML of a webpage. It lets developers add,
+                        remove, or change elements on
+                        a page dynamically, making web pages interactive. For example, in this project i change the
+                        donation and history button color
+                        using dom.
+                    </div>
+                </div>
+                <div class="border-b">
+                    <button
+                        class="flex justify-between items-center w-full p-4 text-left text-base md:text-lg font-semibold"
+                        onclick="toggleAccordion(this)">
+                        Question 2: How do you select an element from the DOM?
+                        <i class="fas fa-chevron-down transition-transform duration-300 transform rotate-0"
+                            aria-hidden="true"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm md:text-base text-gray-700">
+                        To select an element from the DOM, i can use JavaScript methods like: <br>
+                        document.getElementById('id'): Selects an element by its unique ID. <br>
+                        Example: document.getElementById('myButton') <br><br>
+
+                        document.querySelector('selector'): Selects the first element that matches a CSS selector.<br>
+                        Example: document.querySelector('.myClass') (selects the first element with class
+                        myClass)<br><br>
+
+                        document.querySelectorAll('selector'): Selects all elements that match a CSS selector.<br>
+                        Example: document.querySelectorAll('p') (selects all <p> elements)
+                    </div>
+                </div>
+                <div class="border-b">
+                    <button
+                        class="flex justify-between items-center w-full p-4 text-left text-base md:text-lg font-semibold"
+                        onclick="toggleAccordion(this)">
+                        Question 3: What is event delegation in the context of the DOM, and why is it useful?
+                        <i class="fas fa-chevron-down transition-transform duration-300 transform rotate-0"
+                            aria-hidden="true"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm md:text-base text-gray-700">
+                        Event delegation is a technique where instead of adding individual event listeners to multiple
+                        child elements, you add a
+                        single event listener to a parent element. The event bubbles up from the child to the parent,
+                        allowing the parent to
+                        handle it. <br><br>
+
+                        Why It's Useful:<br>
+                        1.Improves performance by reducing the number of event listeners.<br>
+                        2.Handles dynamic content easily, as newly added elements are automatically covered by the
+                        parent’s event listener.
+                    </div>
+                </div>
+                <div>
+                    <button
+                        class="flex justify-between items-center w-full p-4 text-left text-base md:text-lg font-semibold"
+                        onclick="toggleAccordion(this)">
+                        Question 4: How do you manipulate an element's attributes and styles using the DOM?
+                        <i class="fas fa-chevron-down transition-transform duration-300 transform rotate-0"
+                            aria-hidden="true"></i>
+                    </button>
+                    <div class="hidden p-4 text-sm md:text-base text-gray-700">
+                        There's couple of ways to do that like:<br><br>
+
+                        1.Attributes:<br>
+                        .Get: element.getAttribute('attributeName')<br>
+                        .Set: element.setAttribute('attributeName', 'value')<br>
+                        .Remove: element.removeAttribute('attributeName')<br><br>
+
+                        2.Styles:<br>
+                        .Set: element.style.propertyName = 'value'<br>
+                        .Remove: element.style.propertyName = ''
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#e8e0d2] p-4">
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            // Close all other accordions
+            const allContents = document.querySelectorAll('.accordion div > div');
+            const allIcons = document.querySelectorAll('.accordion button i');
+
+            allContents.forEach((item) => {
+                if (item !== content) {
+                    item.classList.add('hidden');
+                }
+            });
+
+            allIcons.forEach((item) => {
+                item.classList.remove('rotate-180');
+            });
+
+            // Toggle the clicked accordion
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+
+</html>
